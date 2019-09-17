@@ -1,0 +1,36 @@
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-md-12">
+      <h2 class="bg-primary"><%= t(".title") %> </h2>
+      <table class="table">
+        <tr>
+          <th><%= t(".name") %></th>
+          <th><%= t(".email") %></th>
+          <th><%= t(".address") %></th>
+          <th><%= t(".phone") %></th>
+          <th><%= t(".role") %></th>
+        </tr>
+        <tr>
+          <td><%= @user.full_name %></td>
+          <td><%= @user.email %></td>
+          <td><%= @user.address %></td>
+          <td><%= @user.phone %></td>
+          <td><%= @user.role %></td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-12">
+      <h2 class="bg-primary"><%= t(".title_course") %> </h2>
+      <table class="table">
+        <tr>
+          <th><%= t(".course") %></th>
+          <th><%= t(".subject") %></th>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
