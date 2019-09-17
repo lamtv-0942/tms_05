@@ -15,6 +15,7 @@
 //= require activestorage
 //= require turbolinks
 //= require jquery-3.3.js
+//= require bootstrap-3.4.js
 //= require dashboard.js
 //= require adminlte.js
 //= require demo.js
