@@ -19,7 +19,7 @@ class Admin::CoursesController < ApplicationController
       flash[:success] = t ".controller.admin.courses.create.success"
       redirect_to admin_courses_path
     else
-      flash[:danger] = t ".controller.admin.courses.create.faild"
+      flash[:danger] = t ".controller.admin.courses.create.failed"
       render :new
     end
   end
@@ -31,7 +31,7 @@ class Admin::CoursesController < ApplicationController
       flash[:success] = t "controller.admin.courses.update.success"
       redirect_to admin_courses_path(@course)
     else
-      flash[:danger] = t "controller.admin.courses.update.faild"
+      flash[:danger] = t "controller.admin.courses.update.failed"
       render :edit
     end
   end

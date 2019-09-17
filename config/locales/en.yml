@@ -22,12 +22,15 @@ en:
           not_f: "Not found course"
         update:
           success: "Update course success"
-          faild: "Cannot update course"
+          failed: "Cannot update course"
         create:
           success: "Create success"
-          faild: "Cannot create"
+          failed: "Cannot create"
     course_managements:
       not_f: "Not found course"
+      add_success: "Add trainee success"
+      add_failed: "Cannot add trainee"
+      user_has_course: "You have taken a course"
   admin:
     courses:
       index:
@@ -74,7 +77,7 @@ en:
       show:
       not_leave: "Your course is activited. You cannot cancel this course"
       create_success: "Join course success"
-      create_faild: "Join course faild"
+      create_failed: "Join course failed"
   layouts:
     admin-login:
       title: "Sun* Training System"
@@ -205,4 +208,4 @@ en:
     course_close:
       confirm: "Are you sure join this course"
     show:
-      add_traine: "Add traine"
+      add_traine: "Add trainee"

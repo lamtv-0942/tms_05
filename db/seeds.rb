@@ -5,105 +5,245 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+thumbnail = Faker::Avatar.image(slug: "my-own-slug", size: "50x50")
+description = Faker::Lorem.paragraph
+n = rand(2..10)
+
 User.create!(full_name: "Truong Van Lam",
   email: "truong.van.lam@sun-asterisk.com",
   password: "123456",
   password_confirmation: "123456",
   address: "Thua Thien Hue",
   phone: "123456789",
-  avatar: "aa",
+  avatar: "",
   role: 1,
   activated: true,
   activated_at: Time.zone.now)
 
-20.times do |n|
-  name  = Faker::Name.name
-  address = Faker::Address.full_address
-  phone = Faker::PhoneNumber.phone_number
-  avatar = Faker::Avatar.image(slug: "my-own-slug", size: "50x50")
-  email = "example-#{n+1}@railstutorial.org"
-  password = "123456"
-  role = rand(1..3)
-  User.create!( full_name:  name,
-                email: email,
-                password: password,
-                password_confirmation: password,
-                address: address,
-                phone: phone,
-                avatar: avatar,
-                role: role,
-                activated: true,
-                activated_at: Time.zone.now)
-end
+#trainer
+User.create!(full_name: "Trainer 1",
+  email: "trainer-1@sun-asterisk.com",
+  password: "123456",
+  password_confirmation: "123456",
+  address: "Thua Thien Hue",
+  phone: "123456789",
+  avatar: "",
+  role: 2,
+  activated: true,
+  activated_at: Time.zone.now)
 
-#seed courses
-20.times do |n|
-  user_admin = User.where(role: 1).pluck(:id)
-  user_trainer = User.where(role: 2).pluck(:id)
-  user = user_admin.concat(user_trainer)
-  creator_id = user.sample
-  name  = Faker::Book.title
-  description = Faker::Lorem.paragraph
-  thumbnail = Faker::Avatar.image(slug: "my-own-slug", size: "50x50")
-  n = rand(2..20)
-  status = rand(1..2)
-  Course.create!( name:  name,
-                thumbnail: thumbnail,
-                description: description,
-                time_start: Time.zone.now,
-                time_end: Time.zone.now + n.weeks,
-                status: status,
-                creator_id: creator_id
-                )
-end
+User.create!(full_name: "Trainer 2",
+  email: "trainer-2@sun-asterisk.com",
+  password: "123456",
+  password_confirmation: "123456",
+  address: "Thua Thien Hue",
+  phone: "123456789",
+  avatar: "aa",
+  role: 2,
+  activated: true,
+  activated_at: Time.zone.now)
+
+#traine
+User.create!(full_name: "traine 1",
+  email: "traine-1@sun-asterisk.com",
+  password: "123456",
+  password_confirmation: "123456",
+  address: "Thua Thien Hue",
+  phone: "123456789",
+  avatar: "aa",
+  role: 3,
+  activated: true,
+  activated_at: Time.zone.now)
+
+User.create!(full_name: "traine-2",
+  email: "traine-2@sun-asterisk.com",
+  password: "123456",
+  password_confirmation: "123456",
+  address: "Thua Thien Hue",
+  phone: "123456789",
+  avatar: "aa",
+  role: 3,
+  activated: true,
+  activated_at: Time.zone.now)
+
+User.create!(full_name: "traine-3",
+  email: "traine-3@sun-asterisk.com",
+  password: "123456",
+  password_confirmation: "123456",
+  address: "Thua Thien Hue",
+  phone: "123456789",
+  avatar: "aa",
+  role: 3,
+  activated: true,
+  activated_at: Time.zone.now)
+
+# courses
+Course.create!( name: "Ruby",
+  thumbnail: thumbnail,
+  description: description,
+  time_start: Time.zone.now,
+  time_end: Time.zone.now + n.weeks,
+  status: 1,
+  creator_id: 2
+  )
+
+Course.create!( name: "PHP",
+  thumbnail: thumbnail,
+  description: description,
+  time_start: Time.zone.now,
+  time_end: Time.zone.now + n.weeks,
+  status: 1,
+  creator_id: 3
+  )
+
+Course.create!( name: "Javascript",
+  thumbnail: thumbnail,
+  description: description,
+  time_start: Time.zone.now,
+  time_end: Time.zone.now + n.weeks,
+  status: 1,
+  creator_id: 2
+  )
 
 #seed subjects
-20.times do |n|
-  user_admin = User.where(role: 1).pluck(:id)
-  user_trainer = User.where(role: 2).pluck(:id)
-  user = user_admin.concat(user_trainer)
-  creator_id = user.sample
+Subject.create!( name:  "Git tutorial",
+  thumbnail: thumbnail,
+  description: description,
+  day_learn: 5,
+  creator_id: 2,
+  )
 
-  courses = Course.pluck(:id)
-  course_id = courses.sample
+Subject.create!( name:  "Ruby basic",
+  thumbnail: thumbnail,
+  description: description,
+  day_learn: 10,
+  creator_id: 2,
+  )
 
-  name  = Faker::Book.title
-  description = Faker::Lorem.paragraph
-  thumbnail = Faker::Avatar.image(slug: "my-own-slug", size: "50x50")
-  n = rand(2..10)
-  m = rand(11..20)
-  status = rand(1..2)
-  Subject.create!( name:  name,
-                thumbnail: thumbnail,
-                description: description,
-                time_start: Time.zone.now + n.weeks,
-                time_end: Time.zone.now + m.weeks,
-                status: status,
-                creator_id: creator_id,
-                course_id: course_id
-                )
-end
+Subject.create!( name:  "Rails",
+  thumbnail: thumbnail,
+  description: description,
+  day_learn: 15,
+  creator_id: 2,
+  )
+
+Subject.create!( name:  "Php Basic",
+  thumbnail: thumbnail,
+  description: description,
+  day_learn: 7,
+  creator_id: 3,
+  )
+
+Subject.create!( name:  "Javacript basic",
+  thumbnail: thumbnail,
+  description: description,
+  day_learn: 6,
+  creator_id: 3,
+  )
+
+# create seed course_subject
+CourseSubject.create!(
+  course_id: 1,
+  subject_id: 1,
+  order: 1
+  )
+
+CourseSubject.create!(
+  course_id: 1,
+  subject_id: 2,
+  order: 2
+  )
+
+CourseSubject.create!(
+  course_id: 1,
+  subject_id: 3,
+  order: 3
+  )
+
+CourseSubject.create!(
+  course_id: 2,
+  subject_id: 1,
+  order: 1
+  )
+
+CourseSubject.create!(
+  course_id: 2,
+  subject_id: 3,
+  order: 2
+  )
+
+CourseSubject.create!(
+  course_id: 3,
+  subject_id: 4,
+  order: 1
+  )
+
+CourseSubject.create!(
+  course_id: 3,
+  subject_id: 5,
+  order: 2
+  )
 
 #creat seed  management_course
-30.times do |n|
-  user_traines = User.where(role: 3).pluck(:id)
-  user_trainers = User.where(role: 2).pluck(:id)
-  user_ids = user_traines.concat(user_trainers)
-  user_id = user_ids.sample
+CourseManagement.create!(
+  time_join: Time.zone.now + n.weeks,
+  status: 1,
+  course_id: 1,
+  user_id: 4
+  )
 
-  courses = Course.pluck(:id)
-  course_id = courses.sample
+CourseManagement.create!(
+  time_join: Time.zone.now + n.weeks,
+  status: 2,
+  course_id: 2,
+  user_id: 4
+  )
 
-  n = rand(2..10)
-  m = rand(11..20)
-  status = rand(1..2)
-  activited = ["true","false"].sample
+CourseManagement.create!(
+  time_join: Time.zone.now + n.weeks,
+  status: 2,
+  course_id: 3,
+  user_id: 4
+  )
+
+CourseManagement.create!(
+  time_join: Time.zone.now + n.weeks,
+  status: 2,
+  course_id: 2,
+  user_id: 5
+  )
+
+CourseManagement.create!(
+  time_join: Time.zone.now + n.weeks,
+  status: 2,
+  course_id: 1,
+  user_id: 5
+  )
+
+CourseManagement.create!(
+  time_join: Time.zone.now + n.weeks,
+  status: 1,
+  course_id: 2,
+  user_id: 6
+  )
+
+CourseManagement.create!(
+  time_join: Time.zone.now + n.weeks,
+  status: 2,
+  course_id: 1,
+  user_id: 2
+  )
+
   CourseManagement.create!(
-                time_join: Time.zone.now + n.weeks,
-                time_leave: Time.zone.now + m.weeks,
-                status: status,
-                activited: activited,
-                course_id: course_id,
-                user_id: user_id
-                )
-end
+    time_join: Time.zone.now + n.weeks,
+    status: 2,
+    course_id: 2,
+    user_id: 3
+    )
+
+CourseManagement.create!(
+  time_join: Time.zone.now + n.weeks,
+  status: 2,
+  course_id: 3,
+  user_id: 2
+  )

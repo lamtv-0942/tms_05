@@ -41,26 +41,28 @@
         <div class="col-md-3">
           <div class="box box-primary">
             <ul><h3><%= t(".trainer") %></h3></ul>
-            <% load_course_management(@course).each do |courser_management| %>
+            <% load_course_management(@course).each do |course_management| %>
               <ul class="list-group">
-                <% if courser_management.user.trainer? %>
-                  <li class="list-group-item"> <%=courser_management.user.full_name %> </li>
+                <% if course_management.user.trainer? %>
+                  <li class="list-group-item"> <%=course_management.full_name %> </li>
                 <% end %>
               </ul>
             <% end %>
             <ul><h3><%= t(".traine") %></h3></ul>
-            <% load_course_management(@course).each do |courser_management| %>
+            <% load_course_management_has_course_is_activited(@course).each do |course_management| %>
               <ul class="list-group">
-                <% if courser_management.user.traine? %>
-                  <li class="list-group-item"> <%=courser_management.user.full_name %> </li>
+                <% if course_management.user.traine?%>
+                  <li class="list-group-item"> <%=course_management.full_name %> </li>
                 <% end %>
               </ul>
             <% end %>
           </div>
           <div class="box box-primary padding-10">
             <% if current_user.trainer? %>
-              <%= form_for @course.course_managements.build, url: register_path, method: :get, class: "form-group" do |f| %>
+              <%= form_for @course.course_managements.build, url: course_management_users_path, method: :post, class: "form-group" do |f| %>
                 <%= f.select :user_id , load_user_is_traine(@course.id), class: "form-control" %>
+                <%= f.hidden_field :course_id, value: @course.id %>
+                <%= f.hidden_field :status, value: :activited %>
                 <%= f.submit t(".add_traine"), class: "btn btn-primary"%>
               <% end %>
             <% end %>

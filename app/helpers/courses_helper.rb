@@ -8,9 +8,16 @@ module CoursesHelper
   end
 
   def load_user_is_traine course_id
-    user_ids = CourseManagement.load_course_managements(course_id)
-                               .pluck(:user_id)
-    @user_ids_not = User.load_user_not(user_ids).traine
-                        .pluck(:full_name, :id)
+    user_ids = CourseManagement
+               .load_course_managements(course_id)
+               .activited
+               .pluck(:user_id)
+    return User.traine.pluck(:full_name, :id) if user_ids.blank?
+    User.load_user_not(user_ids).traine
+        .pluck(:full_name, :id)
+  end
+
+  def load_course_management_has_course_is_activited course
+    course.course_managements.activited
   end
 end

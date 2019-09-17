@@ -6,6 +6,7 @@ class CreateUserSubjects < ActiveRecord::Migration[5.2]
       t.integer :status , default: 1
       t.references :user , foreign_key: true
       t.references :subject , foreign_key: true
+      t.integer :status , default: 2
       t.timestamps
     end
     add_index :user_subjects, [:user_id , :created_at]
