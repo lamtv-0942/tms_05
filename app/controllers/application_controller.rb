@@ -13,10 +13,6 @@ class ApplicationController < ActionController::Base
     redirect_to login_url
   end
 
-  def correct_user
-    redirect_to(root_url) unless current_user? @user
-  end
-
   def correct_permission
     redirect_to user_path(current_user) unless
       current_user.trainer? || current_user.admin?

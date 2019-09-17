@@ -14,4 +14,5 @@ Rails.application.routes.draw do
 
   resources :users, except: :destroy
   resources :course_managements
+  resources :courses
 end

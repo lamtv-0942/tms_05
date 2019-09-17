@@ -1,7 +1,8 @@
 class CourseManagementsController < ApplicationController
   before_action :logged_in_user
-  before_action :load_course_management, only: :show
+  before_action :load_course_management, only: [:show, :destroy]
   before_action :course_management_params, only: :create
+  before_action :check_course_management_is_activited, only: :destroy
 
   def index
     @course_managements = current_user.course_managements.sort_by_created_at
@@ -24,6 +25,15 @@ class CourseManagementsController < ApplicationController
     redirect_to courses_path
   end
 
+  def destroy
+    if @course_management.destroy
+      flash[:success] = t "controller.course_managements.deleted_success"
+    else
+      flash[:danger] = t "controller.course_managements.deleted_faild"
+    end
+    redirect_to courses_path
+  end
+
   private
 
   def course_management_params
@@ -35,5 +45,11 @@ class CourseManagementsController < ApplicationController
     return if @course_management
     flash[:danger] = t "controller.course_managements.not_f"
     redirect_to course_managements_path
+  end
+
+  def check_course_management_is_activited
+    return unless @course_management.activited?
+    flash[:danger] = t "controller.course_managements.not_leave"
+    redirect_to courses_path
   end
 end

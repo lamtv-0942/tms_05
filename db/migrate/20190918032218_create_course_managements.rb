@@ -3,8 +3,7 @@ class CreateCourseManagements < ActiveRecord::Migration[5.2]
     create_table :course_managements do |t|
       t.datetime :time_join
       t.datetime :time_leave
-      t.integer :status , default: 1
-      t.boolean :activited, default: false
+      t.integer :status , default: 2
       t.references :course, foreign_key: true
       t.references :user, foreign_key: true
       t.timestamps
