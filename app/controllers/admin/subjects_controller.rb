@@ -1,8 +1,9 @@
 class Admin::SubjectsController < ApplicationController
   before_action :load_subject, except: [:index, :create, :new]
-  
+
   def index
-    @subjects = Subject.sort_subject.paginate per_page: Settings.parger, page: params[:page]
+    @subjects = Subject.sort_subject
+                       .paginate per_page: Settings.parger, page: params[:page]
   end
 
   def new

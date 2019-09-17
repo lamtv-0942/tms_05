@@ -1,6 +1,6 @@
 class Admin::CoursesController < ApplicationController
+  before_action :correct_permission_admin
   before_action :load_course, only: [:show, :edit, :update]
-  before_action :correct_permission
 
   def index
     @courses = Course.sort_by_created_at.paginate per_page: Settings.per_page,
@@ -46,12 +46,7 @@ class Admin::CoursesController < ApplicationController
   def load_course
     @course = Course.find_by id: params[:id]
     return if @course
-    flash[:danger] = I18n.t "controller.admin.courses.load_course.not_f"
+    flash[:danger] = t "controller.admin.courses.load_course.not_f"
     redirect_to admin_courses_path
-  end
-
-  def correct_permission
-    redirect_to user_path(current_user) unless
-      current_user.trainer? || current_user.admin?
   end
 end

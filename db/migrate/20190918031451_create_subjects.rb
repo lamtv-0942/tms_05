@@ -8,6 +8,7 @@ class CreateSubjects < ActiveRecord::Migration[5.2]
       t.datetime :time_end
       t.integer :status , default: 1
       t.integer :creator_id
+      t.integer :course_id
       t.timestamps
     end
   end

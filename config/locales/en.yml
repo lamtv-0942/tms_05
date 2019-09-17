@@ -26,6 +26,8 @@ en:
         create:
           success: "Create success"
           faild: "Cannot create"
+    course_managements:
+      not_f: "Not found course"
   admin:
     courses:
       index:
@@ -53,13 +55,23 @@ en:
         submit: "Create course"
       show:
         edit_course: "Edit course"
+        created_at: "Created at"
+        status: "Status"
+      new:
+        title: "Create Course"
+        create: "Create"
+      edit:
+        save: "Save"
+        title: "Edit course"
+      form:
+        thumbnail: "Thumbnail"
         name: "Name"
         description: "Description"
         time_start: "Time start"
         time_end: "Time end"
-        created_at: "Created at"
         status: "Status"
-        creator: "Creator"
+        submit: "Create course"
+      show:
   layouts:
     admin-login:
       title: "Sun* Training System"
@@ -126,3 +138,8 @@ en:
         time_start: "Time_start"
         time_end: "Time_end"
         status: "Status"
+  course_managements:
+    index:
+      view_detail: "View detail course"
+      subject: "Number subject"
+      notifi: "You have not signed up for any courses"

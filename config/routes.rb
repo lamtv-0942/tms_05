@@ -6,10 +6,12 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
-  resources :users, except: :destroy
 
   namespace :admin do
     resources :courses, except: :destroy
     resources :subjects
   end
+
+  resources :users, except: :destroy
+  resources :course_managements
 end

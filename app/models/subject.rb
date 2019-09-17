@@ -1,5 +1,8 @@
 class Subject < ApplicationRecord
   has_many :tasks
+
+  belongs_to :user, foreign_key: :creator_id
+
   has_many :user_subjects
   has_many :users, through: :user_subjects
 
@@ -8,10 +11,12 @@ class Subject < ApplicationRecord
 
   validates :name, presence: true,
     length: {maximum: Settings.name_length_maximum,
-    minimum: Settings.name_length_minimum}
+             minimum: Settings.name_length_minimum}
   validates :description, presence: true,
     length: {maximum: Settings.content_text_max_length}
   mount_uploader :thumbnail, ThumbnaiUploader
 
   scope :sort_subject, ->{order id: :desc}
+
+  delegate :full_name, to: :user
 end
