@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title><%= full_title(yield(:title)) %></title>
+  <%= render "layouts/rails_default" %>
+  <%= render "layouts/shim" %>
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini padding0">
+  <div class="wrapper">
+    <%= render "layouts/header_admin" %>
+    <%= render "layouts/left_content_admin" %>
+    <div class="content-wrapper">
+      <section class="content">
+        <%= yield %>
+      </section>
+    </div>
+    <div class="control-sidebar-bg"></div>
+  </div>
+</body>
+
+</html>

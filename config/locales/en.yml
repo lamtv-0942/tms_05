@@ -1,5 +1,19 @@
 en:
+  controller:
+    admin:
+      sessions:
+        create:
+          invalid: "Invalid email/password"
+  admin:
+    sessions:
+      new:
+        login: "Login"
+        email: "Email"
+        password: "Password"
+        remember_me: "Rememberme"
   layouts:
+    admin-login:
+      title: "Sun* Training System"
     application:
       title: "Sun* Training Systems"
       english: "English"
@@ -14,6 +28,20 @@ en:
     footer:
       text: "Da Nang Office: 4F, FHome Building, 16 Ly Thuong Kiet Str., 
         Hai Chau district, Da Nang"
+    header_admin:
+      profile: "Profile"
+      sign_out: "Sign Out"
+    left_content_admin:
+      main_navigation: "MAIN NAVIGATION"
+      management_course: "Management Course"
+      lits_course: "List Course"
+      create_course: "Create Course"
+      management_course: "Management subject"
+      lits_course: "List subject"
+      create_course: "Create subject"
+      management_course: "Management task"
+      lits_course: "List task"
+      create_course: "Create task"
   static_pages:
     base_title: "Sun* Training Systems"
     home:

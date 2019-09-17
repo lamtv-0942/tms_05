@@ -1,3 +1,4 @@
+
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -13,4 +14,23 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require jquery-3.3.js
+//= require dashboard.js
+//= require adminlte.js
+//= require demo.js
+//= require jquery-jvectormap-1.2.2.min.js
+//= require jquery-jvectormap-world-mill-en.js
+//= require jquery-ui.js
+//= require jquery.knob.min.js
+//= require jquery.slimscroll.js
+//= require jquery.sparkline.js
+//= require moment.min.js
+//= require morris.js
+//= require raphael.js
+//= require bootstrap-datepicker.js
+//= require bootstrap3-wysihtml5.all.js
+//= require Chart.js
+//= require daterangepicker.js
+//= require fastclick.js
+//= require daterangepicker.js
 //= require_tree .
