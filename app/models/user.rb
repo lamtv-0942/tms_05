@@ -12,6 +12,8 @@ class User < ApplicationRecord
   has_many :course_managements
   has_many :courses, through: :course_managements
 
+  has_many :courses, foreign_key: :creator_id
+
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   attr_accessor :remember_token
   before_save :downcase_email

@@ -1,0 +1,41 @@
+<%= form_for [:admin, @course] do |f| %>
+  <div class="row">
+    <div class="col-md-5">
+      <%= f.label t(".thumbnail") %>:
+      <%= f.file_field :thumbnail, accept: Settings.accept_picture, class: "form-control" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-10">
+      <%= f.label t(".name") %>:
+      <%= f.text_field :name , class: "form-control" %>
+    </div>
+  </div>
+  <div class="row section">
+    <div class="col-md-10">
+      <%= f.label t(".description") %>:
+      <%= f.text_area :description, size: Settings.description_size, class: "form-control" %>
+    </div>
+  </div>
+  <div class="row section">
+    <div class="col-md-3">
+      <%= f.label t ".time_start" %>:
+      <%= f.date_field :time_start, class: "form-control" %>
+    </div>
+    <div class="col-md-3">
+      <%= f.label t(".time_end") %>:
+      <%= f.date_field :time_end, class: "form-control" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+      <%= f.label t(".status") %>:
+      <%= f.select :status, get_status_select.keys.to_a.map { |v| [v] }, selected: :is_open,  include_blank: true, class: "form-control" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+      <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

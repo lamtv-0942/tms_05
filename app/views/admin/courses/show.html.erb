@@ -1,0 +1,55 @@
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-md-2">
+      <%= link_to  t(".edit_course"), edit_admin_course_path(@course), class: "btn btn-block btn-success btn-lg" %>
+    </div>
+    <div class="container-fuild">
+      <h2 class="bg-primary"><%= @course.name %> </h2>
+      <div class="row">
+        <div class="col-md-5">
+          <%= image_tag(@course.thumbnail.url, size: Settings.thumbnail_size, alt: @course.name) if @course.thumbnail? %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-5">
+          <%= label_tag t(".name") %>:
+          <%= @course.name %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-10">
+          <%= label_tag t(".description") %>:
+          <%= @course.description %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <%= label_tag t(".time_start") %>:
+          <%= l(@course.time_start, format: :short) %>
+        </div>
+        <div class="col-md-3">
+          <%= label_tag t(".time_end") %>:
+          <%= l(@course.time_end, format: :short) %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <%= label_tag t(".created_at") %>:
+          <%= l(@course.created_at, format: :short) %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <%= label_tag t(".status") %>:
+          <%= get_status @course %>
+        </div>
+        <div class="col-md-5">
+          <%= label_tag t(".creator") %>:
+          <%= get_creator @course.creator_id %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12">
+    </div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<tr>
+  <td>
+    <%= image_tag(course.thumbnail.url, size: Settings.thumbnail_size, alt: course.name) if course.thumbnail?  %>
+  </td>
+  <td>
+    <%= link_to course.name, admin_course_path(course) %>
+  </td>
+  <td><%= l(course.time_start, format: :short) %></td>
+  <td><%= l(course.time_end, format: :short) %></td>
+  <td><%= l(course.created_at, format: :short) %></td>
+  <td><%= get_status course %></td>
+  <td><%= get_creator course.creator_id %></td>
+</tr>
