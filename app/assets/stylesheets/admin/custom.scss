@@ -1,0 +1,17 @@
+$gray-light: #777;
+
+.subject {
+  list-style: none;
+  margin: 0;
+  table {
+    th {
+      width: 100px;
+      height: 100px;
+    }
+    li {
+      overflow: auto;
+      padding: 10px 0;
+      border-bottom: 1px solid $gray-light;
+    }
+  }
+}

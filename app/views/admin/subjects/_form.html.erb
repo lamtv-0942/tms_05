@@ -1,0 +1,23 @@
+<%= form_for [:admin, @subject]  do |f| %>
+  <%= render "layouts/shared/error_message", object: f.object %>
+
+  <%= f.label t ".name" %>
+  <%= f.text_field :name, class: "form-control" %>
+
+  <%= f.label t ".description" %>
+  <%= f.text_field :description, class: "form-control" %>
+
+  <%= f.label t ".thumbnail" %>
+  <%= f.file_field :thumbnail, accept: Settings.picture, class: "form-control" %>
+
+  <%= f.label t ".time_start" %>
+  <%= f.text_field :time_start, class: "form-control" %>
+
+  <%= f.label t ".time_end" %>
+  <%= f.text_field :time_end, class: "form-control" %>
+
+  <%= f.label t ".status" %>
+  <%= f.text_field :status, class: "form-control" %>
+
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>

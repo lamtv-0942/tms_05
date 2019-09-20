@@ -1,0 +1,11 @@
+<tr>
+    <th><%= link_to subject.name, "#" %> </th>
+    <th><%= subject.description %> </th>
+    <th class="col-xs-6 col-md-3"><%= image_tag subject.thumbnail.url, class:"thumbnail" if subject.thumbnail? %></th>
+    <th><%= l(subject.time_start, format: :default) %></th>
+    <th><%= l(subject.time_end, format: :default) %></th>
+    <th><%= subject.status %> </th>
+    <th><%= link_to t(".edit"), edit_admin_subject_path(subject) %> </th>
+    <th><%= link_to t(".delete"), admin_subject_path(subject), method: :delete,
+      data: { confirm: t(".sure") } %> </th>
+</tr>

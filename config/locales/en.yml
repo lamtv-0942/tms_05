@@ -1,4 +1,7 @@
 en:
+  time:
+    formats:
+      default: "%d-%m-%Y"
   controller:
       sessions:
         create:
@@ -7,6 +10,14 @@ en:
           admin: "You do not have access to this page"
         load_user:
           not_f: "Not found user"
+      subjects:
+        save_success: "Save success"
+        save_error: "Save error"
+        update_success: "Update success"
+        update_error: "Update error"
+        destroy_success: " destroy success " 
+        destroy_error: "destroy error"
+        not_find: "Not found"
   admin:
     sessions:
       new:
@@ -72,24 +83,36 @@ en:
     about:
       about: "About"
       body_text: ""
-  sessions:
-    new:
-      email: "Email"
-      password: "Password"
-      login: "Login in"
-      signup: "Sign up now!"
-      new_user: "New user? %{link_to_signup}"
-      remember_me: "Remember me on this computer"
-      forgot_password: "Forgot password"
-  users:
-    form:
-      name: "Name"
-      email: "Email"
-      password: "Password"
-      password_confirmation: "Confirmation Password"
-    edit:
-      please_login: "Please log in."
-      title: "Edit user"
-      save_changes: "Sava changes"
-      description: "Update your profile"
-      change: "Change"
+  admin:
+    subjects:
+      index:
+        title: "All subject"
+        create: "Create Subject"
+        subject_name: "Subject name"
+        description: "Description "
+        picture: "Picture"
+        time_start: "Time start"
+        time_end: "Time end"
+        status: "Status"
+        edit: "Edit"
+        delete: "Delete"
+        sure: "You sure?"
+        list: "List subject"
+      subject:
+        edit: "Edit"
+        delete: "Delete"
+        sure: "You sure?"
+        list: "List subject"
+      new:
+        title: "Subject"
+        create: "Create subject"
+      edit:
+        title: "Update subject"
+        update: "Update"
+      form:
+        name: "Name"
+        description: "Description"
+        thumbnail: "Thumbnail"
+        time_start: "Time_start"
+        time_end: "Time_end"
+        status: "Status"

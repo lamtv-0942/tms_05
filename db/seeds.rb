@@ -35,3 +35,13 @@ User.create!(full_name: "Truong Van Lam",
                 activated: true,
                 activated_at: Time.zone.now)
 end
+30.times do
+  name = "Ruby"
+  description = "A ruby is a pink to blood-red colored gemstone"
+  Subject.create!(name: name, 
+                  description: description,
+                  thumbnail: "",
+                  time_start: "20/08/2019",
+                  time_end: "20/9/2019",
+                  status: 1)
+end 
