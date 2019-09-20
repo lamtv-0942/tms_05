@@ -1,0 +1,83 @@
+<aside class="main-sidebar">
+    <section class="sidebar">
+      <div class="user-panel">
+      </div>
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="header"><%= t(".main_navigation") %></li>
+        <!-- managements course-->
+        <li class="active treeview">
+          <%= link_to("#", class: "fa fa-dashboard") do %>
+          <%= t(".management_course") %>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+          <% end %>
+          <ul class="treeview-menu">
+            <li class="active">
+              <%= link_to("#") do %>
+              <i class="fa fa-circle-o"></i>
+              <%= t(".lits_course")%>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to("#") do %>
+              <i class="fa fa-circle-o"></i>
+              <%= t(".create_course")%>
+              <% end %>
+            </li>
+          </ul>
+        </li>
+        <!-- End -->
+  
+        <!-- managements subjects-->
+        <li class="active treeview">
+          <%= link_to("#", class: "fa fa-dashboard") do %>
+          <%= t(".management_subject") %>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+          <% end %>
+          <ul class="treeview-menu">
+            <li class="active">
+              <%= link_to("#") do %>
+              <i class="fa fa-circle-o"></i>
+              <%= t(".lits_subject")%>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to("#") do %>
+              <i class="fa fa-circle-o"></i>
+              <%= t(".create_subject")%>
+              <% end %>
+            </li>
+          </ul>
+        </li>
+        <!-- end -->
+  
+        <!-- managements task-->
+        <li class="active treeview">
+          <%= link_to("#", class: "fa fa-dashboard") do %>
+          <%= t(".management_task") %>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+          <% end %>
+          <ul class="treeview-menu">
+            <li class="active">
+              <%= link_to("#") do %>
+              <i class="fa fa-circle-o"></i>
+              <%= t(".lits_task")%>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to("#") do %>
+              <i class="fa fa-circle-o"></i>
+              <%= t(".create_task")%>
+              <% end %>
+            </li>
+          </ul>
+        </li>
+        <!-- end -->
+        </ul>
+    </section>
+  </aside>

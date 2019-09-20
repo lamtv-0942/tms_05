@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-  enum :role [admin: 1, trainer: 2, traine: 3]
+  enum role: {admin: 1, trainer: 2, traine: 3}
+
   has_many :log_activities, dependent: :destroy
 
   has_many :user_tasks
