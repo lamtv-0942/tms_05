@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :logged_in_user
   before_action :load_user, except: [:index, :new, :create]
   before_action :correct_user, only: [:edit, :update]
-  before_action :correct_permission, only: [:index, :destroy]
+  before_action :correct_permission, only: :index
 
   def index
     @users = User.sort_by_created_at.paginate per_page: Settings.per_page_user,
