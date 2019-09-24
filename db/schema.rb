@@ -123,7 +123,7 @@ ActiveRecord::Schema.define(version: 2019_09_18_040109) do
     t.string "remember_digest"
     t.string "activation_digest"
     t.boolean "activated"
-    t.datetime "activate_at"
+    t.datetime "activated_at"
     t.string "reset_digest"
     t.datetime "reset_sent_at"
     t.integer "role"

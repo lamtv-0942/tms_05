@@ -1,0 +1,20 @@
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-md-12">
+      <h2 class="bg-primary"><%= t(".title") %> </h2>
+      <table class="table">
+        <tr>
+          <th><%= t(".name") %></th>
+          <th><%= t(".email") %></th>
+          <th><%= t(".address") %></th>
+          <th><%= t(".phone") %></th>
+          <th><%= t(".role") %></th>
+        </tr>
+        <tr>
+          <%= render @users %>
+        </tr>
+      </table>
+      <%= will_paginate @users %>
+    </div>
+  </div>
+</div>

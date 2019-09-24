@@ -1,9 +1,12 @@
 en:
   controller:
-    admin:
       sessions:
         create:
           invalid: "Invalid email/password"
+        check_admin:
+          admin: "You do not have access to this page"
+        load_user:
+          not_f: "Not found user"
   admin:
     sessions:
       new:
@@ -11,6 +14,24 @@ en:
         email: "Email"
         password: "Password"
         remember_me: "Rememberme"
+    users:
+      index:
+        title: "Users"
+        name: "Name"
+        email: "Email"
+        address: "Address"
+        phone: "Phone"
+        role: "Role"
+      show:
+        title: "Show User"
+        name: "Name"
+        email: "Email"
+        address: "Address"
+        phone: "Phone"
+        role: "Role"
+        title_course: "All Course"
+        course: "Course"
+        subject: "Sucject"
   layouts:
     admin-login:
       title: "Sun* Training System"
@@ -51,3 +72,24 @@ en:
     about:
       about: "About"
       body_text: ""
+  sessions:
+    new:
+      email: "Email"
+      password: "Password"
+      login: "Login in"
+      signup: "Sign up now!"
+      new_user: "New user? %{link_to_signup}"
+      remember_me: "Remember me on this computer"
+      forgot_password: "Forgot password"
+  users:
+    form:
+      name: "Name"
+      email: "Email"
+      password: "Password"
+      password_confirmation: "Confirmation Password"
+    edit:
+      please_login: "Please log in."
+      title: "Edit user"
+      save_changes: "Sava changes"
+      description: "Update your profile"
+      change: "Change"
