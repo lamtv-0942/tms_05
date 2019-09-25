@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2019_09_18_040109) do
     t.datetime "time_start"
     t.datetime "time_end"
     t.integer "status", default: 1
+    t.integer "creator_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -65,6 +66,7 @@ ActiveRecord::Schema.define(version: 2019_09_18_040109) do
     t.datetime "time_start"
     t.datetime "time_end"
     t.integer "status", default: 1
+    t.integer "creator_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

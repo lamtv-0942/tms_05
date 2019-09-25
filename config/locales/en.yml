@@ -1,48 +1,65 @@
 en:
   time:
     formats:
-      default: "%d-%m-%Y"
+      short: "%d-%m-%Y"
+  helper:
+    admin:
+      courses:
+        not_f: "Not found Creator"
+        open: "open"
+        close: "close"
   controller:
-      sessions:
-        create:
-          invalid: "Invalid email/password"
-        check_admin:
-          admin: "You do not have access to this page"
-        load_user:
-          not_f: "Not found user"
-      subjects:
-        save_success: "Save success"
-        save_error: "Save error"
-        update_success: "Update success"
-        update_error: "Update error"
-        destroy_success: " destroy success " 
-        destroy_error: "destroy error"
-        not_find: "Not found"
-  admin:
     sessions:
-      new:
-        login: "Login"
-        email: "Email"
-        password: "Password"
-        remember_me: "Rememberme"
-    users:
+      create:
+        invalid: "Invalid email/password"
+      check_admin:
+        admin: "You do not have access to this page"
+      load_user:
+        not_f: "Not found user"
+    admin:
+      courses:
+        load_course:
+          not_f: "Not found course"
+        update:
+          success: "Update course success"
+          faild: "Cannot update course"
+        create:
+          success: "Create success"
+          faild: "Cannot create"
+  admin:
+    courses:
       index:
-        title: "Users"
+        creat: "Creat course"
+        title: "List Courses"
         name: "Name"
-        email: "Email"
-        address: "Address"
-        phone: "Phone"
-        role: "Role"
+        description: "Description"
+        time_start: "Time start"
+        time_end: "Time end"
+        created_at: "Created at"
+        status: "Status"
+      new:
+        title: "Create Course"
+        create: "Create"
+      edit:
+        save: "Save"
+        title: "Edit course"
+      form:
+        thumbnail: "Thumbnail"
+        name: "Name"
+        description: "Description"
+        time_start: "Time start"
+        time_end: "Time end"
+        status: "Status"
+        submit: "Create course"
       show:
-        title: "Show User"
+        edit_course: "Edit course"
         name: "Name"
-        email: "Email"
-        address: "Address"
-        phone: "Phone"
-        role: "Role"
-        title_course: "All Course"
-        course: "Course"
-        subject: "Sucject"
+        description: "Description"
+        time_start: "Time start"
+        time_end: "Time end"
+        created_at: "Created at"
+        status: "Status"
+        creator: "Creator"
   layouts:
     admin-login:
       title: "Sun* Training System"
@@ -66,14 +83,7 @@ en:
     left_content_admin:
       main_navigation: "MAIN NAVIGATION"
       management_course: "Management Course"
-      lits_course: "List Course"
-      create_course: "Create Course"
-      management_course: "Management subject"
-      lits_course: "List subject"
-      create_course: "Create subject"
-      management_course: "Management task"
-      lits_course: "List task"
-      create_course: "Create task"
+      lits_course: "Course All"
   static_pages:
     base_title: "Sun* Training Systems"
     home:
