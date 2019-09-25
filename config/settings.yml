@@ -18,3 +18,11 @@ error_image_size: "Image is than 1MB"
 gravatar_size_html: 50
 accept_picture: "image/jpeg,image/gif,image/png"
 per_page_follow: 10
+name_length_maximum: 150
+name_length_minimum: 3
+content_text_max_length: 500
+content_text_min_length: 100
+picture: "image/jpeg, image/gif, image/png,
+  image/jpg, image/svg"
+parger: 5
+size_picture: 80
