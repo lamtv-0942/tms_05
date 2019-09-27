@@ -44,19 +44,10 @@ class UsersController < ApplicationController
       :password, :password_confirmation
   end
 
-  def correct_user
-    redirect_to(root_url) unless current_user? @user
-  end
-
   def load_user
     @user = User.find_by id: params[:id]
     return if @user
     flash[:danger] = t ".user_notfound"
     redirect_to root_path
-  end
-
-  def correct_permission
-    redirect_to user_path(current_user) unless
-      current_user.trainer? || current_user.admin?
   end
 end
