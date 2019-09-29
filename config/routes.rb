@@ -13,7 +13,8 @@ Rails.application.routes.draw do
   end
 
   resources :users, except: :destroy
-  resources :course_managements
   resources :courses
   resources :course_management_users, only: :create
+  resources :tasks
+  resources :subjects
 end

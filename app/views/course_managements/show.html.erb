@@ -27,8 +27,9 @@
                               <div class="widget-user-image">
                                 <%= image_tag(subject.thumbnail.url, size: Settings.thumbnail_size, alt: subject.name) if subject.thumbnail? %>
                               </div>
-                              <h3 class="widget-user-username"><%= subject.name %></h3>
-                              <h5 class="widget-user-desc"><%= subject.full_name %></h5>
+                              <h3 class="widget-user-username">
+                                <%= link_to course_subject.subject.name, subject_path(course_subject.subject) %>
+                              <h5 class="widget-user-desc"><%= course_subject.subject.full_name %></h5>
                             </div>
                           </div>
                       </div>
