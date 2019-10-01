@@ -30,6 +30,7 @@ class User < ApplicationRecord
             allow_nil: true
 
   scope :sort_by_created_at, ->{order created_at: :desc}
+  scope :load_user_not, ->(ids){where "id NOT IN (?)", ids}
 
   class << self
     def digest string

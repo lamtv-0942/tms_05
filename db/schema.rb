@@ -15,8 +15,7 @@ ActiveRecord::Schema.define(version: 2019_09_18_040109) do
   create_table "course_managements", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "time_join"
     t.datetime "time_leave"
-    t.integer "status", default: 1
-    t.boolean "activited", default: false
+    t.integer "status", default: 2
     t.bigint "course_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false
@@ -46,6 +45,7 @@ ActiveRecord::Schema.define(version: 2019_09_18_040109) do
     t.datetime "time_end"
     t.integer "status", default: 1
     t.integer "creator_id"
+    t.integer "day_learn"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 2019_09_18_040109) do
     t.integer "status", default: 1
     t.integer "creator_id"
     t.integer "course_id"
+    t.integer "day_learn"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -81,6 +82,7 @@ ActiveRecord::Schema.define(version: 2019_09_18_040109) do
     t.datetime "time_end"
     t.integer "status", default: 1
     t.integer "creator_id"
+    t.integer "day_learn"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "subject_id"

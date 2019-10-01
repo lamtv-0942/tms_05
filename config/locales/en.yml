@@ -72,6 +72,9 @@ en:
         status: "Status"
         submit: "Create course"
       show:
+      not_leave: "Your course is activited. You cannot cancel this course"
+      create_success: "Join course success"
+      create_faild: "Join course faild"
   layouts:
     admin-login:
       title: "Sun* Training System"
@@ -87,7 +90,7 @@ en:
       signup: "Sing up?"
       about: "About"
     footer:
-      text: "Da Nang Office: 4F, FHome Building, 16 Ly Thuong Kiet Str., 
+      text: "Da Nang Office: 4F, FHome Building, 16 Ly Thuong Kiet Str.,
         Hai Chau district, Da Nang"
     header_admin:
       profile: "Profile"
@@ -138,8 +141,68 @@ en:
         time_start: "Time_start"
         time_end: "Time_end"
         status: "Status"
+    courses:
+      index:
+        creat: "Creat course"
+        title: "List Courses"
+        name: "Name"
+        description: "Description"
+        time_start: "Time start"
+        time_end: "Time end"
+        created_at: "Created at"
+        status: "Status"
+      new:
+        title: "Create Course"
+        create: "Create"
+      edit:
+        save: "Save"
+        title: "Edit course"
+      form:
+        thumbnail: "Thumbnail"
+        name: "Name"
+        description: "Description"
+        time_start: "Time start"
+        time_end: "Time end"
+        status: "Status"
+        submit: "Create course"
+      show:
+        edit_course: "Edit course"
+        created_at: "Created at"
+        status: "Status"
+      new:
+        title: "Create Course"
+        create: "Create"
+      edit:
+        save: "Save"
+        title: "Edit course"
+      form:
+        thumbnail: "Thumbnail"
+        name: "Name"
+        description: "Description"
+        time_start: "Time start"
+        time_end: "Time end"
+        status: "Status"
+        submit: "Create course"
+      show:
   course_managements:
     index:
       view_detail: "View detail course"
       subject: "Number subject"
       notifi: "You have not signed up for any courses"
+  courses:
+    index:
+      join_course: "join this course"
+      confirm: "Are you sure join this course"
+      all_course: "All Course"
+      course_open: "Course is open"
+      course_close: "Course is close"
+    course_open:
+      confirm: "Are you sure join this course"
+      join_course: "join this course"
+      joined_ad: "Joined at:"
+      course_activited: "Course is activited"
+      leave: "Leave"
+    course_close:
+      confirm: "Are you sure join this course"
+    show:
+      add_traine: "Add traine"

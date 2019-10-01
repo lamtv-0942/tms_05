@@ -1,0 +1,29 @@
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="row">
+      <h2><%= t(".all_course") %></h2>
+      <ul class="nav nav-tabs">
+        <li class="active">
+          <%= link_to t(".course_open"), "#home", "data-toggle": "tab" %>
+        </li>
+        <% if current_user.trainer? %>
+          <li>
+            <%= link_to t(".course_close"), "#menu1", "data-toggle": "tab" %>
+          </li>
+        <% end %>
+      </ul>
+      <div class="tab-content">
+        <div id="home" class="tab-pane fade in active">
+          <%= render partial: "course_open", locals: {course_opens: @course_opens} %>
+          <p><%= will_paginate @course_opens %></p>
+        </div>
+        <div id="menu1" class="tab-pane fade">
+          <% if current_user.trainer? %>
+            <%= render partial: "course_close", locals: {course_closes: @course_closes} %>
+            <p><%= will_paginate @course_closes %></p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

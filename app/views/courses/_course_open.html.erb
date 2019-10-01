@@ -1,0 +1,38 @@
+<% @course_opens.each do |course_open| -%>
+  <div class="col-md-4">
+    <div class="box box-widget widget-user-2 min-height-300">
+      <div class="widget-user-header bg-yellow min-height-150">
+        <div class="widget-user-image">
+          <%= image_tag(course_open.thumbnail.url, size: Settings.thumbnail_size, alt: course_open.name) if course_open.thumbnail? %>
+        </div>
+        <h3 class="widget-user-username"><%= course_open.name %></h3>
+        <h5 class="widget-user-desc"><%= course_open.user.full_name %></h5>
+      </div>
+      <div class="box-footer no-padding">
+        <ul class="nav nav-stacked">
+          <li>
+            <span><button class="btn btn-success"><%= t(".subject") %></button> </span>
+            <span class="pull-right badge bg-blue"><%= course_open.subjects.size %></span>
+          </li>
+          <li>
+            <%= link_to t(".view_detail"), course_path(course_open), class: "btn bg-teal color-palette" %>
+          </li>
+          <li>
+            <% if check_join_course_management course_open.id %>
+              <% if check_join_course_management(course_open.id).activited? %>
+                <h4 class="bg-maroon"><%= t(".course_activited") %> </h4>
+              <% end %>
+              <span class=""> <%= t(".joined_ad") %> <%= l(check_join_course_management(course_open.id).time_join, format: :short) %></span>
+              <span class="btn bg-red"><%= link_to t(".leave"), course_management_path(check_join_course_management(course_open.id)), method: :delete %></span>
+            <% elsif  %>
+              <%= form_for course_open.course_managements.build do |f| %>
+                <%= f.hidden_field :course_id, value: course_open.id %>
+                <%= f.submit t(".join_course"), class: "btn bg-navy color-palette"%>
+              <% end %>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+<% end %>
