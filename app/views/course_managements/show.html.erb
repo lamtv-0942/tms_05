@@ -4,44 +4,51 @@
       <div class="row">
         <div class="col-md-9">
           <div class="box box-widget widget-user-2 min-height-300">
-              <div class="widget-user-header bg-yellow min-height-150">
-                <div class="widget-user-image">
-                  <%= image_tag(@course_management.course.thumbnail.url, size: Settings.thumbnail_size, alt: @course_management.course.name) if @course_management.course.thumbnail? %>
-                </div>
-                <h3 class="widget-user-username"><%= @course_management.course.name %></h3>
-                <h5 class="widget-user-desc"><%= @course_management.course.user.full_name %></h5>
+            <div class="widget-user-header bg-yellow min-height-150">
+              <div class="widget-user-image">
+                <%= image_tag(@course_management.course.thumbnail.url, size: Settings.thumbnail_size, alt: @course_management.course.name) if @course_management.course.thumbnail? %>
               </div>
-              <div class="box-footer no-padding">
-                <ul class="nav nav-stacked">
-                  <li>
-                    <span><h3><%= t(".subject") %></h3></span>
-                    <span class="pull-right badge bg-blue"><%= @course_management.course.subjects.size %></span>
-                  </li>
-                </ul>
-                <ul class="nav nav-stacked">
-                  <% load_subjects(@course_management).each do |subject| %>
+              <h3 class="widget-user-username"><%= @course_management.course.name %></h3>
+              <h5 class="widget-user-desc"><%= @course_management.course.user.full_name %></h5>
+            </div>
+            <div class="box-footer no-padding">
+              <ul class="nav nav-stacked">
+                <li>
+                  <span><h3><%= t(".subject") %></h3></span>
+                  <span class="pull-right badge bg-blue"><%= @course_management.course.subjects.size %></span>
+                </li>
+              </ul>
+              <ul class="nav nav-stacked">
+                <% start_day =  load_start_day @course_management %>
+                <% load_course_subject(@course_management).each do |course_subject| %>
+                  <span><button class="btn btn-success"><%= l(start_day, format: :short) %></button></span>
+                  <span>
+                    <%= course_subject.subject.day_learn%>
+                    <%= t(".day") %>
+                  </span>
+                  <% start_day += course_subject.subject.day_learn.days %>
                     <div class="row">
                       <div class="col-md-5">
                         <div class="box box-widget widget-user-2 bg-light-blue" >
                             <div class="widget-user-header bg-light-blue">
                               <div class="widget-user-image">
-                                <%= image_tag(subject.thumbnail.url, size: Settings.thumbnail_size, alt: subject.name) if subject.thumbnail? %>
+                                <%= image_tag(course_subject.subject.thumbnail.url, size: Settings.thumbnail_size, alt: course_subject.subject.name) if course_subject.subject.thumbnail? %>
                               </div>
-                              <h3 class="widget-user-username"><%= subject.name %></h3>
-                              <h5 class="widget-user-desc"><%= subject.full_name %></h5>
+                              <h3 class="widget-user-username"><%= course_subject.subject.name %></h3>
+                              <h5 class="widget-user-desc"><%= course_subject.subject.full_name %></h5>
                             </div>
                           </div>
                       </div>
                     </div>
-                  <% end %>
-                </ul>
-              </div>
+                <% end %>
+              </ul>
             </div>
+          </div>
         </div>
         <div class="col-md-3">
           <div class="box box-primary">
             <ul><h3><%= t(".trainer") %></h3></ul>
-            <% load_course_management(@course_management).each do |courser_management| %>
+            <% load_course_management_course(@course_management).each do |courser_management| %>
               <ul class="list-group">
                 <% if courser_management.user.trainer? %>
                   <li class="list-group-item"> <%=courser_management.full_name %> </li>
@@ -49,7 +56,7 @@
               </ul>
             <% end %>
             <ul><h3><%= t(".traine") %></h3></ul>
-            <% load_course_management(@course_management).each do |courser_management| %>
+            <% load_user_is_traine_course_management(@course_management.course_id).each do |user| %>
               <ul class="list-group">
                 <% if courser_management.user.traine? %>
                   <li class="list-group-item"> <%=courser_management.full_name %> </li>

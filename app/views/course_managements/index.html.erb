@@ -1,13 +1,33 @@
 <div class="container-fluid">
   <div class="row justify-content-center">
     <div class="row">
-      <% if @course_managements.blank? %>
-        <div class="callout callout-info">
-          <h4><%= t(".notifi") %></h4>
+        <h2><%= t(".all_course") %></h2>
+        <ul class="nav nav-tabs">
+          <li class="active">
+            <%= link_to t(".course_activited"), "#home", "data-toggle": "tab" %>
+          </li>
+          <li>
+            <%= link_to t(".course_joined"), "#menu1", "data-toggle": "tab" %>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div id="home" class="tab-pane fade in active">
+            <% if @course_activiteds.blank? %>
+              <div class="callout callout-info">
+                <h4><%= t(".notifi") %></h4>
+              </div>
+            <% end %>
+            <%= render partial: "course_activited", locals: {course_activited: @course_activiteds} %>
+          </div>
+          <div id="menu1" class="tab-pane fade">
+            <% if @course_non_activiteds.blank? %>
+              <div class="callout callout-info">
+                <h4><%= t(".notifi") %></h4>
+              </div>
+            <% end %>
+            <%= render partial: "course_non_activited", locals: {course_non_activited: @course_non_activiteds} %>
+          </div>
         </div>
-      <% end %>
-      <%= render @course_managements %>
-    </div>
-    <p><%= will_paginate @course_managements %></p>
+      </div>
   </div>
 </div>

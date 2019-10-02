@@ -192,6 +192,9 @@ en:
       view_detail: "View detail course"
       subject: "Number subject"
       notifi: "You have not signed up for any courses"
+      course_join: "Course is joined"
+      course_activited: "Course is participating"
+      day: "day"
   courses:
     index:
       join_course: "join this course"

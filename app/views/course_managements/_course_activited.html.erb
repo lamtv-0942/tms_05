@@ -1,0 +1,22 @@
+<% course_activited.each do |course_activited| %>
+  <div class="col-md-4">
+    <div class="box box-widget widget-user-2 min-height-300">
+      <div class="widget-user-header bg-yellow min-height-150">
+        <div class="widget-user-image">
+          <%= image_tag(course_activited.course.thumbnail.url, size: Settings.thumbnail_size, alt: course_activited.course.name) if course_activited.course.thumbnail? %>
+        </div>
+        <h3 class="widget-user-username"><%= course_activited.course.name %></h3>
+        <h5 class="widget-user-desc"><%= course_activited.course.user.full_name %></h5>
+      </div>
+      <div class="box-footer no-padding">
+        <ul class="nav nav-stacked">
+          <li>
+            <span><button class="btn btn-success"><%= t(".subject") %></button> </span>
+            <span class="pull-right badge bg-blue"><%= course_activited.course.subjects.size %></span>
+          </li>
+          <li><%= link_to t(".view_detail"), course_management_path(course_activited), class: "btn bg-teal color-palette" %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+<% end %>
