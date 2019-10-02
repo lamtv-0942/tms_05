@@ -20,7 +20,7 @@ class CourseManagementsController < ApplicationController
     if @course_management.save
       flash[:success] = t "controller.course_managements.create_success"
     else
-      flash[:danger] = t "controller.course_managements.create_faild"
+      flash[:danger] = t "controller.course_managements.create_failed"
     end
     redirect_to courses_path
   end
@@ -29,7 +29,7 @@ class CourseManagementsController < ApplicationController
     if @course_management.destroy
       flash[:success] = t "controller.course_managements.deleted_success"
     else
-      flash[:danger] = t "controller.course_managements.deleted_faild"
+      flash[:danger] = t "controller.course_managements.deleted_failed"
     end
     redirect_to courses_path
   end

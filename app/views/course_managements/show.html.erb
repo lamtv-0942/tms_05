@@ -44,7 +44,7 @@
             <% load_course_management(@course_management).each do |courser_management| %>
               <ul class="list-group">
                 <% if courser_management.user.trainer? %>
-                  <li class="list-group-item"> <%=courser_management.user.full_name %> </li>
+                  <li class="list-group-item"> <%=courser_management.full_name %> </li>
                 <% end %>
               </ul>
             <% end %>
@@ -52,7 +52,7 @@
             <% load_course_management(@course_management).each do |courser_management| %>
               <ul class="list-group">
                 <% if courser_management.user.traine? %>
-                  <li class="list-group-item"> <%=courser_management.user.full_name %> </li>
+                  <li class="list-group-item"> <%=courser_management.full_name %> </li>
                 <% end %>
               </ul>
             <% end %>

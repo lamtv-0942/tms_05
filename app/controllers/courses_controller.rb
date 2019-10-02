@@ -19,6 +19,7 @@ class CoursesController < ApplicationController
   def load_course
     @course = Course.find_by id: params[:id]
     return if @course
-    redirect_to courses_paths
+    flash[:danger] = t "controler.courses.not_f"
+    redirect_to courses_path
   end
 end
